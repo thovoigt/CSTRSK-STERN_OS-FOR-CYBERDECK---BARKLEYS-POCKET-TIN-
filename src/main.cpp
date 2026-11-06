@@ -102,11 +102,12 @@ void setup() {
   } else if (Storage.isFlashMounted()) {
     terminalPrint("Storage: Internal Flash ready (No SD)");
   } else {
-  drawTerminal();
-  delay(300);
+    drawTerminal();
+    delay(300);
 
-  // Desktop-Umgebung automatisch beim Systemstart laden
-  openDesktop();
+    // Desktop-Umgebung automatisch beim Systemstart laden
+    openDesktop();
+  }
 }
 
 // -------------------------------------------------------------------

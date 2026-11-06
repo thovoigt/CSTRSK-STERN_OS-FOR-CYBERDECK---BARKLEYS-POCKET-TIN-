@@ -25,6 +25,7 @@ public:
     uint8_t readCartRamByte(uint32_t addr);
     void writeCartRamByte(uint32_t addr, uint8_t val);
     void drawLcdLine(const uint8_t pixels[], uint8_t line);
+    static GbCore* _instance;
 
 private:
     void* _gbContext;
@@ -38,7 +39,7 @@ private:
 
     // Line buffer / Framebuffer rendering
     static TFT_eSPI* _currentTft;
-    static GbCore* _instance;
+//    static GbCore* _instance;
 
     // Cache für File-Paging wenn kein PSRAM vorhanden ist
     uint8_t _bankCache[16384];

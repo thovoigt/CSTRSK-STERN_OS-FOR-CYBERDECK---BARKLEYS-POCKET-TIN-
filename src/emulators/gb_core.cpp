@@ -31,7 +31,7 @@ static void gb_error_cb(struct gb_s *gb, const enum gb_error_e err, const uint16
     Serial.printf("[GB ERROR] Code: %d, Val: 0x%04X\n", (int)err, val);
 }
 
-static void gb_lcd_draw_line_cb(struct gb_s *gb, const uint_fast8_t pixels[], const uint_fast8_t line) {
+static void gb_lcd_draw_line_cb(struct gb_s *gb, const uint8_t pixels[], const uint8_t line) {
     if (GbCore::_instance) {
         GbCore::_instance->drawLcdLine(pixels, line);
     }

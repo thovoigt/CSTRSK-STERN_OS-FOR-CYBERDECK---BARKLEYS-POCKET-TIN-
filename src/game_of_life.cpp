@@ -26,7 +26,7 @@ bool newGrid[MAX_GRID_H][MAX_GRID_W];
 uint32_t hashHistory[HASH_HISTORY];
 int hashIndex = 0;
 
-bool gameRunning = false;
+bool gameRunning2 = false;
 unsigned long lastGeneration = 0;
 int generationDelay = 100;
 
@@ -178,7 +178,7 @@ void runGameOfLife() {
   GRID_H = 240 / currentCellSize;
   randomizeGrid();
   clearHashHistory();
-  gameRunning = true;
+  gameRunning2 = true;
   generationDelay = 100;
   lastGeneration = millis();
   colorIndex = 0;
@@ -202,7 +202,7 @@ void runGameOfLife() {
       // Выходим по нажатию row0-col0 (ESC)
       if (row == 0 && col == 0 && pressed) {
         exitGame = true;
-        gameRunning = false;
+        gameRunning2 = false;
         Serial.println("Exit by button press");
         Keypad.flush();
         break;
@@ -211,12 +211,12 @@ void runGameOfLife() {
 
     if (millis() - startTime >= GAME_DURATION_MS) {
       exitGame = true;
-      gameRunning = false;
+      gameRunning2 = false;
       Serial.println("Exit by timer");
       break;
     }
 
-    if (gameRunning && (millis() - lastGeneration >= generationDelay)) {
+    if (gameRunning2 && (millis() - lastGeneration >= generationDelay)) {
       lastGeneration = millis();
       nextGeneration();
     }
@@ -225,6 +225,6 @@ void runGameOfLife() {
   }
 
   tft.fillScreen(TFT_WHITE);
-  gameRunning = false;
-  Serial.println("runGameOfLife finished, gameRunning = false");
+  gameRunning2 = false;
+  Serial.println("runGameOfLife finished, gameRunning2 = false");
 }

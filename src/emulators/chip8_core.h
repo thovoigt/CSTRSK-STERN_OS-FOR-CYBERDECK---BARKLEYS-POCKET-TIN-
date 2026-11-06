@@ -2,6 +2,7 @@
 #define CHIP8_CORE_H
 
 #include "emulator_interface.h"
+#include "display_config.h"
 #include <vector>
 
 struct BuiltInRom {

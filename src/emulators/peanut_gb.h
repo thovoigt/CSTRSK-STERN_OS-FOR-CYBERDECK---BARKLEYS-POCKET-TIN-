@@ -687,7 +687,7 @@ struct gb_s
 		 */
 		void (*lcd_draw_line)(struct gb_s *gb,
 				const uint8_t *pixels,
-				const uint_fast8_t line);
+				const uint8_t line);
 
 		/* Palettes */
 		uint8_t bg_palette[4];
@@ -3826,7 +3826,7 @@ const char* gb_get_rom_name(struct gb_s* gb, char *title_str)
 void gb_init_lcd(struct gb_s *gb,
 		void (*lcd_draw_line)(struct gb_s *gb,
 			const uint8_t *pixels,
-			const uint_fast8_t line))
+			const uint8_t line))
 {
 	gb->display.lcd_draw_line = lcd_draw_line;
 
@@ -3937,7 +3937,7 @@ void gb_reset(struct gb_s *gb);
 void gb_init_lcd(struct gb_s *gb,
 		void (*lcd_draw_line)(struct gb_s *gb,
 			const uint8_t *pixels,
-			const uint_fast8_t line));
+			const uint8_t line));
 #endif
 
 /**
